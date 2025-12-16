@@ -57,6 +57,8 @@ io.on('connection', (socket) => {
     });
 });
 
-http.listen(3000, () => {
-    console.log('Listening on *:3000');
+// Use the port Render gives us, or 3000 if testing locally
+const PORT = process.env.PORT || 3000;
+http.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
 });
